@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+    letter-spacing: 0.3px;
+}
+
+.card {
+    max-width: 1000px;
+    width: 95%;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+    padding: 0;
+    text-align: center;
+    position: relative;
+    color: #333;
+    background: #ffffff;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: #1a237e;
+    border-radius: 0 15px 15px 0;
+    z-index: 1;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 30%;
+    width: 100px;
+    height: 100%;
+    background: #1a237e;
+    transform: skewX(-10deg);
+    transform-origin: top;
+    z-index: 1;
+}
+
+.logos-wrapper {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.dinas-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.employee-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .employee-photo {
+    transform: translateY(-5px);
+}
+
+.profile-section {
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.profile-image {
+    width: 100%;
+    padding: 20px 40px 40px 40px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    margin-bottom: 30px;
+    position: relative;
+    text-align: left;
+}
+
+.header h1 {
+    color: #1a237e;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 3;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+.decoration {
+    font-size: 1.8em;
+    color: #4a148c;
+    margin: 25px 0;
+    letter-spacing: 8px;
+    opacity: 0.9;
+}
+
+.message {
+    margin: 30px 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.header h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.name {
+    font-size: 2em;
+    color: #1a237e;
+    font-weight: bold;
+    margin: 15px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.main-text {
+    color: #f71414;
+    font-size: 1.15em;
+    margin: 25px auto;
+    max-width: 700px;
+    line-height: 1.9;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.quote {
+    font-style: italic;
+    color: #f71414;
+    margin-top: 20px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.years {
+    margin: 30px 0;
+}
+
+.service-years {
+    background: linear-gradient(45deg, #001845, #002766);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.25em;
+    display: inline-block;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.service-years:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+.profile-image {
+    margin-top: 30px;
+    text-align: left;
+    padding: 20px 20px 20px 40px;
+}
+
+.employee-photo {
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .profile-section {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .profile-image {
+        width: 100%;
+        padding: 30px;
+        order: 1;
+    }
+
+    .employee-photo {
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .header h1 {
+        font-size: 2.8em;
+    }
+
+    .name {
+        font-size: 2em;
+    }
+
+    .service-years {
+        padding: 12px 25px;
+        font-size: 1.15em;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-content {
+        padding: 0 25px 30px;
+    }
+    
+    .header {
+        padding-top: 70px;
+    }
+
+    .header h1 {
+        font-size: 2.2em;
+    }
+    
+    .name {
+        font-size: 1.8em;
+    }
+    
+    .main-text {
+        font-size: 1em;
+        line-height: 1.7;
+    }
+    
+    .logos-wrapper {
+        padding: 0 20px;
+        top: 25px;
+    }
+    
+    .logo {
+        width: 70px;
+        padding: 6px;
+    }
+
+    .profile-section {
+        width: 300px;
+        height: 400px;
+        margin: 20px auto;
+    }
+
+    .service-years {
+        padding: 10px 20px;
+        font-size: 1.1em;
+    }
+
+    .footer {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .sign-name {
+        font-size: 1.2em;
+    }
+
+    .sign-title {
+        font-size: 1em;
+    }
+}
